@@ -41,7 +41,7 @@ export default function GetInvolved() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Join Kenya's leading mental health movement and help create lasting change
+            Join a leading mental health movement and help create lasting change
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function GetInvolved() {
           >
             <HeartIcon className="h-16 w-16 text-red-500 mx-auto mb-6" />
             <h3 className="text-3xl font-bold mb-4 text-gray-800">
-              Can't Volunteer? Consider Donating
+              Cannot Volunteer? Consider Donating
             </h3>
             <p className="text-gray-600 mb-6">
               Your financial support helps us maintain clinics and expand services
