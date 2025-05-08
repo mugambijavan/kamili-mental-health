@@ -54,27 +54,34 @@ export default function Home() {
   return (
     <div className="bg-gradient-to-b from-white to-blue-50">
       {/* Hero Section */}
-      <section 
-        className="relative py-24 bg-cover bg-center text-white overflow-hidden" 
-        style={{ backgroundImage: 'url(/image022.jpeg)' }}
-      >
-        <div className="container mx-auto px-4 text-center">
-          <h1 
+      <section className="relative py-24 bg-cover bg-center text-white overflow-hidden">
+        {/* Blurred Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/image022.jpeg"
+            alt="Background"
+            fill
+            className="object-cover filter blur-md"
+          />
+        </div>
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h1
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-blue-600"
             data-aos="fade-up"
             data-aos-delay="100"
           >
             Healing Minds, <br className="hidden md:block" />Transforming Lives
           </h1>
-          <p 
+          <p
             className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto opacity-95 font-light text-blue-600"
             data-aos="fade-up"
             data-aos-delay="300"
           >
             Pioneering mental wellness in Kenya since 2009 through compassionate care and community empowerment
           </p>
-          
-          <div 
+
+          <div
             className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl"
             data-aos="zoom-in"
             data-aos-delay="500"
@@ -88,7 +95,7 @@ export default function Home() {
               {['image030.jpeg', 'image031.jpeg', 'image023.jpeg'].map((slide, index) => (
                 <SwiperSlide key={index}>
                   <div className="relative h-full w-full">
-                    <Image 
+                    <Image
                       src={`/${slide}`}
                       fill
                       className="object-cover"
@@ -100,14 +107,14 @@ export default function Home() {
               ))}
             </Swiper>
             <Link
-            href="/donate"
-            className="bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-            data-aos="zoom-in"
-            data-aos-delay="500"
-          >
-            <span>Support Our Work</span>
-            <span className="text-xl animate-pulse">→</span>
-          </Link>
+              href="/donate"
+              className="bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+              data-aos="zoom-in"
+              data-aos-delay="500"
+            >
+              <span>Support Our Work</span>
+              <span className="text-xl animate-pulse">→</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -119,9 +126,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
               Our Vision for Kenya
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div 
+              <div
                 className="relative aspect-video rounded-2xl shadow-xl overflow-hidden"
                 data-aos="zoom-in-right"
               >
@@ -132,20 +139,23 @@ export default function Home() {
                   allowFullScreen
                 />
               </div>
-              
+
               <div className="space-y-6" data-aos="fade-left">
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Founded in 2009 by Melanie Blake, Kamili has grown from two clinics to becoming a leading mental health provider. Our Nairobi model clinic offers comprehensive care including diagnosis, treatment, and family support.
+                  Founded in 2009 by Melanie Blake, Kamili has grown from two clinics to becoming a
+                  leading mental health provider. Our Nairobi model clinic offers comprehensive care
+                  including diagnosis, treatment, and family support.
                 </p>
-                <div 
+                <div
                   className="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-600"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
                   <h3 className="text-xl font-bold mb-2 text-blue-800">Royal Recognition</h3>
-                  <p className="text-gray-700">2017 MBE recipient for outstanding mental health services</p>
+                  <p className="text-gray-700">
+                    2017 MBE recipient for outstanding mental health services
+                  </p>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -158,10 +168,10 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
             Our Holistic Programs
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {initiatives.map((initiative, index) => (
-              <div 
+              <div
                 key={initiative.title}
                 className={`p-8 rounded-2xl ${initiative.color} transition-all duration-300 hover:translate-y-2 hover:shadow-xl border border-white`}
                 data-aos="flip-up"
@@ -189,18 +199,16 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
             Nationwide Impact
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {stats.map((stat, index) => (
-              <div 
+              <div
                 key={stat.id}
                 className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-b-4 border-blue-100"
                 data-aos="zoom-in"
                 data-aos-delay={index * 150}
               >
-                <div className="text-4xl font-bold text-blue-600 mb-2">
-                  {stat.value}
-                </div>
+                <div className="text-4xl font-bold text-blue-600 mb-2">{stat.value}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
