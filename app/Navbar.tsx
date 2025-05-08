@@ -32,7 +32,7 @@
 
     const mobileMenuVariants = {
         open: { opacity: 1, y: 0 },
-        closed: { opacity: 0, y: '-100%' },
+        closed: { opacity: 0, y: '-20%' },
     };
 
     const linkVariants = {
@@ -40,7 +40,7 @@
         visible: (i: number) => ({
         opacity: 1,
         y: 0,
-        transition: { delay: i * 0.1 }
+        transition: { delay: i * 0.1, ease: "easeOut" }
         }),
     };
 
@@ -48,7 +48,9 @@
         <>
         <nav
             className={`fixed w-full z-50 transition-all duration-300 ${
-            scrolling ? 'h-16 bg-blue-800 shadow-lg' : 'h-20 bg-blue-600'
+            scrolling 
+                ? 'h-16 bg-blue-800/95 shadow-lg backdrop-blur-sm' 
+                : 'h-20 bg-blue-600/95 backdrop-blur-sm'
             }`}
         >
             <div className="container mx-auto h-full px-4 sm:px-6 lg:px-8">
@@ -68,7 +70,7 @@
                 </motion.div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden lg:flex space-x-4 h-full items-center">
+                <div className="hidden md:flex space-x-4 h-full items-center">
                 {navLinks.map((link, index) => {
                     const isActive = pathname === link.href;
                     return (
@@ -78,13 +80,15 @@
                         animate="visible"
                         custom={index}
                         variants={linkVariants}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         <Link
                         href={link.href}
                         className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                             isActive
                             ? 'bg-white text-blue-600 font-semibold'
-                            : 'text-white hover:bg-white/10 hover:scale-105'
+                            : 'text-white hover:bg-white/10'
                         }`}
                         >
                         {link.label}
@@ -95,13 +99,15 @@
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button
+                <motion.button
                 onClick={toggleMenu}
-                className="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
                 aria-label="Toggle navigation menu"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 >
                 {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-                </button>
+                </motion.button>
             </div>
             </div>
         </nav>
@@ -114,7 +120,8 @@
                 animate="open"
                 exit="closed"
                 variants={mobileMenuVariants}
-                className="fixed inset-0 z-40 bg-blue-700 lg:hidden pt-20"
+                className="fixed inset-0 z-40 bg-blue-800/95 backdrop-blur-sm md:hidden pt-20"
+                transition={{ duration: 0.3, ease: "easeInOut" }}
             >
                 <div className="container mx-auto px-4 py-6">
                 <div className="flex flex-col space-y-4">
@@ -123,9 +130,10 @@
                     return (
                         <motion.div
                         key={index}
-                        initial={{ x: 50 }}
-                        animate={{ x: 0 }}
-                        transition={{ delay: index * 0.1 }}
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 50, opacity: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.2 }}
                         >
                         <Link
                             href={link.href}

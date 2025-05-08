@@ -3,9 +3,10 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import AOS from 'aos';
 import 'swiper/css';
+import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'aos/dist/aos.css';
@@ -51,59 +52,85 @@ export default function Home() {
     { id: 3, value: '44', label: 'Counties Reached' },
   ];
 
+
   return (
     <div className="bg-gradient-to-b from-white to-blue-50">
       {/* Hero Section */}
-      <section className="relative h-[90vh] bg-gradient-to-br from-blue-600 to-indigo-800 text-white">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          autoplay={{ delay: 6000 }}
-          pagination={{ clickable: true }}
-          navigation
-          className="absolute inset-0"
-        >
-          {[1, 2, 3].map((slide) => (
-            <SwiperSlide key={slide}>
-              <div className="relative h-full w-full">
-                <Image 
-                  src={`/kamili-hero-${slide}.jpg`} 
-                  fill 
-                  className="object-cover object-center"
-                  alt="Mental Health Care"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/30" />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        
-        <div className="absolute inset-0 flex flex-col justify-center items-center px-4 text-center">
-          <h1 
-            className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-xl"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Transforming Mental Health<br className="hidden md:block"/> in Kenya
-          </h1>
-          <p 
-            className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-95 font-light"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            Compassionate care and community education since 2009
-          </p>
-          <Link
-            href="/donate"
-            className="bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-            data-aos="zoom-in"
-            data-aos-delay="500"
-          >
-            <span>Support Our Work</span>
-            <span className="text-xl animate-pulse">→</span>
-          </Link>
-        </div>
-      </section>
+      {/* Hero Section */}
+<section className="relative h-screen">
+  <div className="absolute inset-0 z-0">
+    <Swiper
+      modules={[Autoplay, Pagination, EffectFade]}
+      effect="fade"
+      speed={1000}
+      loop={true}
+      autoplay={{ 
+        delay: 4000,
+        disableOnInteraction: false,
+        waitForTransition: true
+      }}
+      pagination={{ 
+        clickable: true,
+        el: '.swiper-pagination',
+        bulletClass: 'swiper-pagination-bullet',
+        bulletActiveClass: 'swiper-pagination-bullet-active'
+      }}
+      className="h-full"
+    >
+      {['/image030.jpeg', '/image031.jpeg'].map((img, i) => (
+        <SwiperSlide key={i}>
+          <div className="relative h-full w-full">
+            <Image 
+              src={img}
+              fill
+              className="object-cover object-center"
+              alt="Dairy Farming"
+              priority
+              quality={80}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+
+  <div className="relative z-10 h-full flex items-center">
+    <div className="absolute inset-0 flex flex-col justify-center items-center px-4 text-center">
+            <h1 
+              className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-xl"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Transforming Mental Health<br className="hidden md:block"/> in Kenya
+            </h1>
+            <p 
+              className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-95 font-light"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              Compassionate care and community education since 2009
+            </p>
+            <Link
+              href="/donate"
+              className="bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+              data-aos="zoom-in"
+              data-aos-delay="500"
+            >
+              <span>Support Our Work</span>
+              <span className="text-xl animate-pulse">→</span>
+            </Link>
+          </div>
+  </div>
+
+  {/* Pagination */}
+  <div className="absolute bottom-10 left-0 right-0 z-20">
+    <div className="container flex justify-center">
+      <div className="swiper-pagination !relative !bottom-0" />
+    </div>
+  </div>
+</section>
+
 
       {/* Mission Section */}
       <section className="py-20 bg-white/90 backdrop-blur-lg" data-aos="fade-up">

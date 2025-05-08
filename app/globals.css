@@ -143,3 +143,76 @@
     animation-delay: 0.4s;
   }
 }
+
+.swiper-slide-active img {
+  animation: kenburns 20s linear infinite;
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+[data-aos] {
+  transition-property: transform, opacity !important;
+}
+
+.hero-next::after, .hero-prev::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(-45deg);
+}
+
+.hero-prev::after {
+  transform: rotate(135deg);
+  margin-left: -4px;
+}
+/* Swiper custom styles */
+.hero-pagination .swiper-pagination-progressbar-fill {
+  background: white !important;
+  height: 2px !important;
+  top: -1px !important;
+}
+
+.hero-next::after, .hero-prev::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.hero-prev::after {
+  transform: rotate(135deg);
+  margin-left: -4px;
+}
+
+/* Image animations */
+.swiper-slide-active img {
+  animation: kenburns 20s linear infinite;
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Smooth transitions */
+[data-aos] {
+  transition-property: transform, opacity !important;
+}
+
+.hover-scale {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
