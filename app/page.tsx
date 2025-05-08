@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'aos/dist/aos.css';
-import { UserGroupIcon, BookOpenIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { UserGroupIcon, BookOpenIcon, ShieldCheckIcon, FaceSmileIcon } from '@heroicons/react/24/outline';
 
 export default function Home() {
   useEffect(() => {
@@ -215,6 +215,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Professional Accreditation */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center text-slate-600 max-w-3xl mx-auto">
+            <FaceSmileIcon className="h-16 w-16 text-blue-600 mx-auto mb-6" />
+            <p className="text-xl mb-4">
+              Kamili Clinic is accredited by the Kenya Mental Health Association
+              and staffed with licensed psychiatric professionals
+            </p>
+            <div className="flex justify-center gap-8 mt-8">
+              {/* Accreditation logos would go here */}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
