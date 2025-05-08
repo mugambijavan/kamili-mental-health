@@ -99,6 +99,15 @@ export default function Home() {
                 </SwiperSlide>
               ))}
             </Swiper>
+            <Link
+            href="/donate"
+            className="bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <span>Support Our Work</span>
+            <span className="text-xl animate-pulse">→</span>
+          </Link>
           </div>
         </div>
       </section>
@@ -136,6 +145,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold mb-2 text-blue-800">Royal Recognition</h3>
                   <p className="text-gray-700">2017 MBE recipient for outstanding mental health services</p>
                 </div>
+                
               </div>
             </div>
           </div>
