@@ -15,9 +15,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$ico
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
+;
 ;
 ;
 ;
@@ -94,14 +96,14 @@ const Navbar = ()=>{
                 y: 0,
                 transition: {
                     delay: i * 0.1,
-                    ease: "easeOut"
+                    ease: 'easeOut'
                 }
             })
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                className: `fixed w-full z-50 transition-all duration-300 ${scrolling ? 'h-16 bg-blue-800/95 shadow-lg backdrop-blur-sm' : 'h-20 bg-blue-600/95 backdrop-blur-sm'}`,
+                className: `fixed w-full z-50 transition-all duration-300 ${scrolling ? 'h-16 bg-white shadow-lg' : 'h-20 bg-transparent'}`,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "container mx-auto h-full px-4 sm:px-6 lg:px-8",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -119,18 +121,39 @@ const Navbar = ()=>{
                                     stiffness: 260,
                                     damping: 20
                                 },
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/",
-                                    className: "text-white text-xl md:text-2xl font-bold tracking-tight hover:text-blue-100 transition-colors",
-                                    children: "Kamili Organization"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/Navbar.tsx",
-                                    lineNumber: 64,
-                                    columnNumber: 17
-                                }, this)
-                            }, void 0, false, {
+                                className: "flex items-center",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            src: "/logo.avif",
+                                            alt: "Kamili Organization Logo",
+                                            width: 50,
+                                            height: 50,
+                                            className: "rounded-full"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/Navbar.tsx",
+                                            lineNumber: 67,
+                                            columnNumber: 21
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Navbar.tsx",
+                                        lineNumber: 66,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/",
+                                        className: "ml-3 text-blue-800 text-xl md:text-2xl font-bold tracking-tight hover:text-blue-600 transition-colors",
+                                        children: "Kamili.org"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/Navbar.tsx",
+                                        lineNumber: 75,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/app/Navbar.tsx",
-                                lineNumber: 59,
+                                lineNumber: 60,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -150,27 +173,27 @@ const Navbar = ()=>{
                                         },
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             href: link.href,
-                                            className: `px-4 py-2 rounded-lg transition-all duration-300 ${isActive ? 'bg-white text-blue-600 font-semibold' : 'text-white hover:bg-white/10'}`,
+                                            className: `px-4 py-2 rounded-lg transition-all duration-300 ${isActive ? 'bg-blue-800 text-white font-semibold' : 'text-blue-800 hover:bg-blue-100'}`,
                                             children: link.label
                                         }, void 0, false, {
                                             fileName: "[project]/app/Navbar.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 97,
                                             columnNumber: 25
                                         }, this)
                                     }, index, false, {
                                         fileName: "[project]/app/Navbar.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 88,
                                         columnNumber: 21
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/app/Navbar.tsx",
-                                lineNumber: 73,
+                                lineNumber: 84,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].button, {
                                 onClick: toggleMenu,
-                                className: "md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors",
+                                className: "md:hidden text-blue-800 p-2 rounded-lg hover:bg-blue-100 transition-colors",
                                 "aria-label": "Toggle navigation menu",
                                 whileHover: {
                                     scale: 1.1
@@ -182,34 +205,34 @@ const Navbar = ()=>{
                                     size: 24
                                 }, void 0, false, {
                                     fileName: "[project]/app/Navbar.tsx",
-                                    lineNumber: 109,
+                                    lineNumber: 120,
                                     columnNumber: 27
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaBars"], {
                                     size: 24
                                 }, void 0, false, {
                                     fileName: "[project]/app/Navbar.tsx",
-                                    lineNumber: 109,
+                                    lineNumber: 120,
                                     columnNumber: 51
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/Navbar.tsx",
-                                lineNumber: 102,
+                                lineNumber: 113,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/Navbar.tsx",
-                        lineNumber: 57,
+                        lineNumber: 58,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Navbar.tsx",
-                    lineNumber: 56,
+                    lineNumber: 57,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Navbar.tsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -218,10 +241,10 @@ const Navbar = ()=>{
                     animate: "open",
                     exit: "closed",
                     variants: mobileMenuVariants,
-                    className: "fixed inset-0 z-40 bg-blue-800/95 backdrop-blur-sm md:hidden pt-20",
+                    className: "fixed inset-0 z-40 bg-white shadow-lg md:hidden pt-20",
                     transition: {
                         duration: 0.3,
-                        ease: "easeInOut"
+                        ease: 'easeInOut'
                     },
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "container mx-auto px-4 py-6",
@@ -249,44 +272,44 @@ const Navbar = ()=>{
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: link.href,
                                         onClick: ()=>setIsOpen(false),
-                                        className: `block px-6 py-3 rounded-xl text-lg transition-all ${isActive ? 'bg-white text-blue-600 font-bold' : 'text-white hover:bg-white/20'}`,
+                                        className: `block px-6 py-3 rounded-xl text-lg transition-all ${isActive ? 'bg-blue-800 text-white font-bold' : 'text-blue-800 hover:bg-blue-100'}`,
                                         children: link.label
                                     }, void 0, false, {
                                         fileName: "[project]/app/Navbar.tsx",
-                                        lineNumber: 138,
+                                        lineNumber: 149,
                                         columnNumber: 25
                                     }, this)
                                 }, index, false, {
                                     fileName: "[project]/app/Navbar.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 142,
                                     columnNumber: 25
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/app/Navbar.tsx",
-                            lineNumber: 127,
+                            lineNumber: 138,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/Navbar.tsx",
-                        lineNumber: 126,
+                        lineNumber: 137,
                         columnNumber: 17
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/Navbar.tsx",
-                    lineNumber: 118,
+                    lineNumber: 129,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/Navbar.tsx",
-                lineNumber: 116,
+                lineNumber: 127,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `transition-all duration-300 ${scrolling ? 'pt-16' : 'pt-20'}`
             }, void 0, false, {
                 fileName: "[project]/app/Navbar.tsx",
-                lineNumber: 159,
+                lineNumber: 170,
                 columnNumber: 9
             }, this)
         ]

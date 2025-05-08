@@ -5,6 +5,7 @@
     import { FaBars, FaTimes } from 'react-icons/fa';
     import { usePathname } from 'next/navigation';
     import { motion, AnimatePresence } from 'framer-motion';
+    import Image from 'next/image';
 
     const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@
         visible: (i: number) => ({
         opacity: 1,
         y: 0,
-        transition: { delay: i * 0.1, ease: "easeOut" }
+        transition: { delay: i * 0.1, ease: 'easeOut' },
         }),
     };
 
@@ -48,9 +49,9 @@
         <>
         <nav
             className={`fixed w-full z-50 transition-all duration-300 ${
-            scrolling 
-                ? 'h-16 bg-blue-800/95 shadow-lg backdrop-blur-sm' 
-                : 'h-20 bg-blue-600/95 backdrop-blur-sm'
+            scrolling
+                ? 'h-16 bg-white shadow-lg'
+                : 'h-20 bg-transparent'
             }`}
         >
             <div className="container mx-auto h-full px-4 sm:px-6 lg:px-8">
@@ -60,12 +61,22 @@
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+                className="flex items-center"
                 >
+                <Link href="/">
+                    <Image
+                    src="/logo.avif"
+                    alt="Kamili Organization Logo"
+                    width={50}
+                    height={50}
+                    className="rounded-full"
+                    />
+                </Link>
                 <Link
                     href="/"
-                    className="text-white text-xl md:text-2xl font-bold tracking-tight hover:text-blue-100 transition-colors"
+                    className="ml-3 text-blue-800 text-xl md:text-2xl font-bold tracking-tight hover:text-blue-600 transition-colors"
                 >
-                    Kamili Organization
+                    Kamili.org
                 </Link>
                 </motion.div>
 
@@ -87,8 +98,8 @@
                         href={link.href}
                         className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                             isActive
-                            ? 'bg-white text-blue-600 font-semibold'
-                            : 'text-white hover:bg-white/10'
+                            ? 'bg-blue-800 text-white font-semibold'
+                            : 'text-blue-800 hover:bg-blue-100'
                         }`}
                         >
                         {link.label}
@@ -101,7 +112,7 @@
                 {/* Mobile Menu Button */}
                 <motion.button
                 onClick={toggleMenu}
-                className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="md:hidden text-blue-800 p-2 rounded-lg hover:bg-blue-100 transition-colors"
                 aria-label="Toggle navigation menu"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -120,8 +131,8 @@
                 animate="open"
                 exit="closed"
                 variants={mobileMenuVariants}
-                className="fixed inset-0 z-40 bg-blue-800/95 backdrop-blur-sm md:hidden pt-20"
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="fixed inset-0 z-40 bg-white shadow-lg md:hidden pt-20"
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
                 <div className="container mx-auto px-4 py-6">
                 <div className="flex flex-col space-y-4">
@@ -140,8 +151,8 @@
                             onClick={() => setIsOpen(false)}
                             className={`block px-6 py-3 rounded-xl text-lg transition-all ${
                             isActive
-                                ? 'bg-white text-blue-600 font-bold'
-                                : 'text-white hover:bg-white/20'
+                                ? 'bg-blue-800 text-white font-bold'
+                                : 'text-blue-800 hover:bg-blue-100'
                             }`}
                         >
                             {link.label}

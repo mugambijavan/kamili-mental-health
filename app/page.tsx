@@ -3,10 +3,9 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import AOS from 'aos';
 import 'swiper/css';
-import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'aos/dist/aos.css';
@@ -16,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: false,
+      once: true,
       offset: 120,
       easing: 'ease-in-out-quad',
     });
@@ -52,85 +51,57 @@ export default function Home() {
     { id: 3, value: '44', label: 'Counties Reached' },
   ];
 
-
   return (
     <div className="bg-gradient-to-b from-white to-blue-50">
       {/* Hero Section */}
-      {/* Hero Section */}
-<section className="relative h-screen">
-  <div className="absolute inset-0 z-0">
-    <Swiper
-      modules={[Autoplay, Pagination, EffectFade]}
-      effect="fade"
-      speed={1000}
-      loop={true}
-      autoplay={{ 
-        delay: 4000,
-        disableOnInteraction: false,
-        waitForTransition: true
-      }}
-      pagination={{ 
-        clickable: true,
-        el: '.swiper-pagination',
-        bulletClass: 'swiper-pagination-bullet',
-        bulletActiveClass: 'swiper-pagination-bullet-active'
-      }}
-      className="h-full"
-    >
-      {['/image030.jpeg', '/image031.jpeg'].map((img, i) => (
-        <SwiperSlide key={i}>
-          <div className="relative h-full w-full">
-            <Image 
-              src={img}
-              fill
-              className="object-cover object-center"
-              alt="Dairy Farming"
-              priority
-              quality={80}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+      <section 
+        className="relative py-24 bg-cover bg-center text-white overflow-hidden" 
+        style={{ backgroundImage: 'url(/image022.jpeg)' }}
+      >
+        <div className="container mx-auto px-4 text-center">
+          <h1 
+            className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-blue-600"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Healing Minds, <br className="hidden md:block" />Transforming Lives
+          </h1>
+          <p 
+            className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto opacity-95 font-light text-blue-600"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            Pioneering mental wellness in Kenya since 2009 through compassionate care and community empowerment
+          </p>
+          
+          <div 
+            className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              autoplay={{ delay: 6000 }}
+              pagination={{ clickable: true }}
+              className="aspect-video"
+            >
+              {['image030.jpeg', 'image031.jpeg', 'image023.jpeg'].map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <div className="relative h-full w-full">
+                    <Image 
+                      src={`/${slide}`}
+                      fill
+                      className="object-cover"
+                      alt={`Mental health care ${index + 1}`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/50" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
-
-  <div className="relative z-10 h-full flex items-center">
-    <div className="absolute inset-0 flex flex-col justify-center items-center px-4 text-center">
-            <h1 
-              className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-xl"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              Transforming Mental Health<br className="hidden md:block"/> in Kenya
-            </h1>
-            <p 
-              className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-95 font-light"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              Compassionate care and community education since 2009
-            </p>
-            <Link
-              href="/donate"
-              className="bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-              data-aos="zoom-in"
-              data-aos-delay="500"
-            >
-              <span>Support Our Work</span>
-              <span className="text-xl animate-pulse">→</span>
-            </Link>
-          </div>
-  </div>
-
-  {/* Pagination */}
-  <div className="absolute bottom-10 left-0 right-0 z-20">
-    <div className="container flex justify-center">
-      <div className="swiper-pagination !relative !bottom-0" />
-    </div>
-  </div>
-</section>
-
+        </div>
+      </section>
 
       {/* Mission Section */}
       <section className="py-20 bg-white/90 backdrop-blur-lg" data-aos="fade-up">
